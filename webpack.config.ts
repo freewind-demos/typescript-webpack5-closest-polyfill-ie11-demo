@@ -1,7 +1,6 @@
-import { Configuration } from 'webpack';
+import {Configuration} from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
-import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 
 const config: Configuration = {
   mode: 'development',
@@ -22,10 +21,6 @@ const config: Configuration = {
     }]
   },
   plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      reportFilename: './dist/bundleContentReport.html'
-    }),
     new HtmlWebpackPlugin()
   ]
 }
