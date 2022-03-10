@@ -4,8 +4,9 @@ import path from 'path';
 
 const config: Configuration = {
   mode: 'development',
-  entry: './src/entry.tsx',
+  entry: [require.resolve('element-closest-polyfill'), './src/entry.tsx'],
   devtool: 'inline-source-map',
+  target: ['web', 'es5'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -21,7 +22,9 @@ const config: Configuration = {
     }]
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ]
 }
 

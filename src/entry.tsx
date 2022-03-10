@@ -1,9 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
 
-import { Hello } from './hello'
+const a = document.querySelector('#main')?.closest<HTMLDivElement>('.a')
 
-ReactDOM.render(
-  <Hello/>,
-  document.body
-)
+if (a) {
+  a.style.border = "1px solid red";
+}
+
+
